@@ -1,0 +1,49 @@
+.content {
+    grid-area: c;
+    background-color: #FAFAFB;
+    color: #7D837A;
+    margin: 20px;
+    width: 50%;
+  }
+  .createPost {
+    padding: 10px;
+    display: grid;
+    grid-template-rows: 60px auto 30px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    "h h . ." 
+    "i t t t" 
+    ". . b b";
+    box-shadow: 0 0 5px 5px #e4e1e1;
+  }
+
+  .createPost h2 {
+    grid-area: h;
+    font-weight: 400;
+  }
+
+  .createPost img {
+    grid-area: i;
+    border-radius: 50%;
+  }
+
+  .createPost textarea {
+    grid-area: t;
+    padding: 10px;
+    border: none;
+    resize: none;
+    background-color: #FAFAFB;
+  }
+
+  .createPost button {
+    grid-area: b;
+    background-color: #50B5FF;
+    color: #FAFAFB;
+    border: none;
+    border-radius: 5px;
+  }
+
+
+.item {
+  color: #7D837A;
+}

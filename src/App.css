@@ -1,26 +1,14 @@
 .app-wrapper {
   display: grid;
   grid-template-areas: "h h" "n c";
-  grid-template-rows: 60px 1fr;
+  grid-template-rows: 80px 1fr;
   grid-template-columns: 2fr 10fr;
-  width: 1080px;
+  width: 100%;
+  height: 100%;
 }
-
-.header {
-  grid-area: h;
-  background-color: blue;
+.material-icons {
+  color: #50B5FF;
 }
-
-.header img {
-  width: 40px;
-}
-
-.nav {
-  grid-area: n;
-  background-color: brown;
-}
-
-.content {
-  grid-area: c;
-  background-color: coral;
+.material-icons.gray {
+  color: #7D837A;
 }

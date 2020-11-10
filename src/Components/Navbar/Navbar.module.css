@@ -1,0 +1,15 @@
+.nav {
+  grid-area: n;
+  display: flex;
+  flex-direction: column;
+  box-shadow: inset 0 10px 14px -8px #e4e1e1;
+}
+
+.item {
+  display: flex;
+  color: #7D837A;
+  margin: 10px 5px 0px 5px;
+  padding: 10px 20px 10px 20px;
+  height: 30px;
+  text-decoration: none;
+}

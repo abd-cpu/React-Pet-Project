@@ -1,0 +1,50 @@
+.post {
+    margin-top: 20px;
+    padding: 10px;
+    box-shadow: 0 0 5px 5px #e4e1e1;
+}
+.postHead {
+    display: flex;
+    align-items: center;
+}
+
+.postHead a {
+    color: #575757;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.postHead span {
+    color: #50B5FF;
+}
+
+
+.postHead img {
+    border-radius: 50%;
+}
+
+.postActivity {
+    display: flex;
+    align-items: center;
+}
+
+.likes {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+.comments {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+.share {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
