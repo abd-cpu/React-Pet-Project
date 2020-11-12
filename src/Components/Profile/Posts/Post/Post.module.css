@@ -22,10 +22,12 @@
 
 
 .postHead img {
+    width: 50px;
     border-radius: 50%;
 }
 
 .postActivity {
+    padding: 10px;
     display: flex;
     align-items: center;
 }

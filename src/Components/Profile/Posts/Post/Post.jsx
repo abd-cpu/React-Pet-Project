@@ -5,7 +5,7 @@ const Post = (props) => {
   return (
       <div className={s.post}>
         <div className={s.postHead}>
-          <img src="https://iqonic.design/themes/socialv/html/images/user/04.jpg" />
+          <img src={props.avatar} />
           <a href="#">{props.userName}</a>
           <span>6 hours ago</span>
         </div>

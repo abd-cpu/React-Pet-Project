@@ -12,7 +12,7 @@ import VideoGallery from "./Components/VideoGallery/VideoGallery";
 import News from "./Components/News/News";
 import Documents from "./Components/Documents/Documents";
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -20,9 +20,9 @@ function App() {
         <Navbar />
         <div className="app-wrapper-content">
           <Route path='/news' component={News} />
-          <Route path='/dialogs' component={Dialogs} />
+          <Route path='/dialogs' render={() => <Dialogs companionData={props.companionData} />} />
           <Route path='/groups' component={Groups} />
-          <Route path='/profile' component={Profile} />
+          <Route path='/profile' render={() => <Profile postsData={props.postsData} />} />
           <Route path='/photoGallery' component={PhotoGallery} />
           <Route path='/videoGallery' component={VideoGallery} />
           <Route path='/documents' component={Documents} />

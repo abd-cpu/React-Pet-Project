@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Profile.module.css';
 import Posts from "./Posts/Posts";
 
-const Profile = () => {
+const Profile = (props) => {
   return (
     <div className={s.content}>
       <div className={s.createPost}>
@@ -13,7 +13,7 @@ const Profile = () => {
         
         <button>Post</button>
       </div>
-      <Posts />
+      <Posts postsData={props.postsData} />
     </div>
   )
 }

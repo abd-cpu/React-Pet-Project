@@ -3,8 +3,9 @@ import s from './Companion.module.css';
 import {NavLink} from 'react-router-dom';
 
 const Companion = (props) => {
+    let path = "/dialogs/" + props.pathName;
     return (
-        <NavLink to={props.pathName} className={s.container}>
+        <NavLink to={path} className={s.container}>
             <img src={props.avatar} />
             <div>
                 <div className={s.name}>{props.userName}</div>
