@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    padding: 10px;
+}
+
+.container img {
+    width: 50px;
+    border-radius: 5px;
+}
+
+.container div {
+    margin-left: 5px;
+}
+
+.name {
+    color: #3d3d3d;
+}
+
+.status {
+    color: #50B5FF;
+}
