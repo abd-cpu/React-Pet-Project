@@ -1,6 +1,7 @@
 .container {
     display: flex;
     padding: 10px;
+    text-decoration: none;
 }
 
 .container img {

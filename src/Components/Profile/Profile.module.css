@@ -7,7 +7,7 @@
     grid-template-areas: 
     "h h . ." 
     "i t t t" 
-    ". . b b";
+    ". . . b";
     box-shadow: 0 0 5px 5px #e4e1e1;
   }
 
