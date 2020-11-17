@@ -8,12 +8,12 @@
 }
 .discussion {
     display: grid;
-    grid-template-rows: 1fr 7fr 1fr;
+    grid-template-rows: 10% 50% 10%;
     margin: 10px;
 }
 
 .display {
-    height: auto;
+    overflow: auto;
     width: 100%;
     background-image: url("https://iqonic.design/themes/socialv/vue/dist/img/100.2d05046f.jpg");
 }

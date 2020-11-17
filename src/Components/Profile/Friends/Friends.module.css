@@ -1,0 +1,14 @@
+.container {
+    padding: 10px;
+    box-shadow: 0 0 5px 5px #e4e1e1;
+}
+
+.friendsList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+}
+
+.friend img {
+    width: 80px;
+}

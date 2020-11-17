@@ -1,4 +1,5 @@
 .nav {
+  margin-top: 10px;
   grid-area: n;
   display: flex;
   flex-direction: column;

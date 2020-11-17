@@ -1,0 +1,41 @@
+.messageBlock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+}
+
+.messageBlockAuthor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    margin: 10px;
+}
+
+.messageInfo {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 20px;
+}
+
+.text {
+   display: flex;
+   align-items: center;
+   padding: 20px;
+   background-color: #ffffff;
+   border-radius: 15px;
+}
+
+.textAuthor {
+   display: flex;
+   align-items: center;
+   padding: 20px;
+   background-color: #50B5FF;
+   color: #ffffff;
+   border-radius: 15px;
+}
+
+.avatar {
+    width: 40px;
+}
