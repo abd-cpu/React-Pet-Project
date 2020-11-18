@@ -20,9 +20,17 @@ function App(props) {
         <Navbar />
         <div className="app-wrapper-content">
           <Route path='/news' component={News} />
-          <Route path='/dialogs' render={() => <Dialogs companionData={props.companionData} />} />
+          <Route 
+            path='/dialogs' 
+            render={() => <Dialogs 
+                            typeMessage={props.typeNewMessage}
+                            addMessage={props.addMessage} 
+                            companionData={props.state.messagesPage} />} />
           <Route path='/groups' component={Groups} />
-          <Route path='/profile' render={() => <Profile postsData={props.postsData} />} />
+          <Route 
+            path='/profile' 
+            render={() => <Profile 
+                            postsData={props.state.profilePage} />} />
           <Route path='/photoGallery' component={PhotoGallery} />
           <Route path='/videoGallery' component={VideoGallery} />
           <Route path='/documents' component={Documents} />

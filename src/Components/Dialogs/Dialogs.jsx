@@ -8,12 +8,27 @@ const Dialogs = (props) => {
   let ref = React.createRef();
 
   let sendMessage = () => {
+    let action = {
+      type: "ADD-MESSAGE"
+    }
+    props.addMessage(action);
+  }
 
-    alert(ref.current.value)
+  let typeInput = () => {
+    let text = ref.current.value;
+    let action = {
+      type: "TYPE-MESSAGE",
+      newText: text
+    }
+    props.typeMessage(action);
   }
 
   const companionElements = props.companionData.dialogs
-    .map(user => <Companion pathName={user.id} status={user.status} userName={user.userName} avatar={user.avatar} />)
+    .map(user => <Companion 
+                    pathName={user.id} 
+                    status={user.status} 
+                    userName={user.userName} 
+                    avatar={user.avatar} />)
 
   return (
     <div className={s.dialogs}>
@@ -21,12 +36,16 @@ const Dialogs = (props) => {
         { companionElements }
       </div>
       <div className={s.discussion}>
-        <Companion pathName={props.companionData.dialogs[0].id} status={props.companionData.dialogs[0].status} userName={props.companionData.dialogs[0].userName} avatar={props.companionData.dialogs[0].avatar} />
+        <Companion 
+          pathName={props.companionData.dialogs[0].id} 
+          status={props.companionData.dialogs[0].status} 
+          userName={props.companionData.dialogs[0].userName} 
+          avatar={props.companionData.dialogs[0].avatar} />
         <div className={s.display}>
           <Messages messages={ props.companionData.messages } />
         </div>
         <div className={s.inputs}>
-          <input ref={ref} placeholder="Type your message" />
+          <input ref={ref} onChange={typeInput} placeholder="Type your message" value={props.companionData.newMessage} />
           <button onClick={sendMessage}>Send</button>
         </div>
       </div>

@@ -1,16 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import state from './redux/state';
+import store from './redux/store';
+import App from './App';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App companionData={state.messagesPage} postsData={state.profilePage} />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+let rerenderDom = (store) => {
+    ReactDOM.render(
+        <React.StrictMode>
+            <App 
+                state={store.getState()}
+                addMessage={store.dispatch.bind(store)}
+                typeNewMessage={store.dispatch.bind(store)}
+                />
+        </React.StrictMode>,
+        document.getElementById('root')
+    );
+}
+rerenderDom(store);
+
+store.setSubscribe(rerenderDom);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
