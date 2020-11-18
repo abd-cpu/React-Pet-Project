@@ -9,11 +9,7 @@ const Post = (props) => {
           <a href="#">{props.userName}</a>
           <span>6 hours ago</span>
         </div>
-        <div className={s.postContent}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Morbi nulla dolor, ornare at commodo non, feugiat non nisi. 
-            Phasellus faucibus mollis pharetra. Proin blandit ac massa sed rhoncus
-        </div>
+        <div className={s.postContent}>{props.text}</div>
         <div className={s.postActivity}>
           <a href="#" className={s.likes}>
             <span className="material-icons">thumb_up</span> {props.likeCount} Likes

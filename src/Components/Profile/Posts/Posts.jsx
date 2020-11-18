@@ -5,7 +5,12 @@ import Post from "./Post/Post";
 const Posts = (props) => {
 
   const postsElements = props.postsData
-    .map(post => (<Post userName={post.userName} likeCount={post.likeCount} commentCount={post.commentCount} shareCount={post.shareCount} avatar={post.avatar} />));
+    .map(post => (<Post userName={post.userName}
+                        text={post.text} 
+                        likeCount={post.likeCount} 
+                        commentCount={post.commentCount} 
+                        shareCount={post.shareCount} 
+                        avatar={post.avatar} />));
   
     return (
       <div>

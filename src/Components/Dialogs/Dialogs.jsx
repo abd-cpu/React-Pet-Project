@@ -1,4 +1,5 @@
 import React from 'react';
+import { addMessageActionCreator, typeInputActionCreator } from '../../redux/store';
 import Companion from './Companion/Companion';
 import s from './Dialogs.module.css';
 import Messages from './Messages/Messages';
@@ -8,19 +9,14 @@ const Dialogs = (props) => {
   let ref = React.createRef();
 
   let sendMessage = () => {
-    let action = {
-      type: "ADD-MESSAGE"
-    }
-    props.addMessage(action);
+
+    props.addMessage(addMessageActionCreator());
   }
 
   let typeInput = () => {
     let text = ref.current.value;
-    let action = {
-      type: "TYPE-MESSAGE",
-      newText: text
-    }
-    props.typeMessage(action);
+
+    props.typeMessage(typeInputActionCreator(text));
   }
 
   const companionElements = props.companionData.dialogs

@@ -12,6 +12,8 @@ let rerenderDom = (store) => {
                 state={store.getState()}
                 addMessage={store.dispatch.bind(store)}
                 typeNewMessage={store.dispatch.bind(store)}
+                addPost={store.dispatch.bind(store)}
+                typePost={store.dispatch.bind(store)}
                 />
         </React.StrictMode>,
         document.getElementById('root')

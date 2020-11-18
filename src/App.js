@@ -29,7 +29,9 @@ function App(props) {
           <Route path='/groups' component={Groups} />
           <Route 
             path='/profile' 
-            render={() => <Profile 
+            render={() => <Profile
+                            addPost={props.addPost}
+                            typePost={props.typePost}
                             postsData={props.state.profilePage} />} />
           <Route path='/photoGallery' component={PhotoGallery} />
           <Route path='/videoGallery' component={VideoGallery} />
