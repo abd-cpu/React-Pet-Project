@@ -1,5 +1,5 @@
 import React from 'react';
-import { addMessageActionCreator, typeInputActionCreator } from '../../redux/store';
+import { addMessageActionCreator, typeInputActionCreator } from '../../redux/messageReducer';
 import Companion from './Companion/Companion';
 import s from './Dialogs.module.css';
 import Messages from './Messages/Messages';

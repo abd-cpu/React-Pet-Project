@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Profile.module.css';
 import Posts from "./Posts/Posts";
 import Friends from './Friends/Friends';
-import { addPostActionCreator, typePostActionCreator } from '../../redux/store';
+import { addPostActionCreator, typePostActionCreator } from '../../redux/profileReducer';
 
 const Profile = (props) => {
 

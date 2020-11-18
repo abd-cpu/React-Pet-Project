@@ -1,7 +1,5 @@
-const ADD_MESSAGE = "ADD-MESSAGE";
-const TYPE_MESSAGE = "TYPE-MESSAGE";
-const ADD_POST = "ADD-POST";
-const TYPE_POST = "TYPE-POST";
+import messageReducer from "./messageReducer";
+import profileReducer from "./profileReducer";
 
 let store = {
     _state: {
@@ -72,70 +70,14 @@ let store = {
         return this._state;
     },
 
-    /*     setNewMessage (text) {
-            this._state.messagesPage.newMessage = text;
-            this._callSubscriber(this);
-        },
-        addMessage () {
-            let message = { id: "7", author: true, message: this._state.messagesPage.newMessage, date: "18:40", avatar: "https://iqonic.design/themes/socialv/vue/dist/img/09.b245ce8d.jpg"};
-            this._state.messagesPage.messages.push(message);
-            this._state.messagesPage.newMessage = "";
-            this._callSubscriber(this);
-        }, */
     setSubscribe(observer) {
         this._callSubscriber = observer;
     },
     dispatch(action) {
-        switch (action.type) {
-            case ADD_MESSAGE:
-                let message = {
-                    id: "7",
-                    author: true,
-                    message: this._state.messagesPage.newMessage,
-                    date: "18:40",
-                    avatar: "https://iqonic.design/themes/socialv/vue/dist/img/09.b245ce8d.jpg"
-                };
-                this._state.messagesPage.messages.push(message);
-                this._state.messagesPage.newMessage = "";
-                this._callSubscriber(this);
-                break;
-            case TYPE_MESSAGE:
-                this._state.messagesPage.newMessage = action.newText;
-                this._callSubscriber(this);
-                break;
-            case ADD_POST:
-                let post = {  
-                    userName: "Andr Koldar", 
-                    text: this._state.profilePage.newPost,
-                    likeCount: "0", 
-                    commentCount: "0", 
-                    shareCount: "0", 
-                    avatar: "https://iqonic.design/themes/socialv/vue/dist/img/g2.32d0f5a2.jpg"
-                };
-                this._state.profilePage.posts.unshift(post);
-                this._state.profilePage.newPost = "";
-                this._callSubscriber(this);
-                break;
-            case TYPE_POST:
-                this._state.profilePage.newPost = action.newPost;
-                this._callSubscriber(this);
-                break;
-            default:
-                break;
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.messagesPage = messageReducer(this._state.messagesPage, action);
+        this._callSubscriber(this);
     }
 }
-
-export let addMessageActionCreator = () => ({ type: ADD_MESSAGE });
-export let typeInputActionCreator = (text) => ({
-    type: TYPE_MESSAGE,
-    newText: text
-});
-export let addPostActionCreator = () => ({type: ADD_POST});
-export let typePostActionCreator = (postText) => ({
-    type: TYPE_POST,
-    newPost: postText
-})
-
 
 export default store;
