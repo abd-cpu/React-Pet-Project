@@ -70,7 +70,7 @@ let store = {
         return this._state;
     },
 
-    setSubscribe(observer) {
+    subscribe(observer) {
         this._callSubscriber = observer;
     },
     dispatch(action) {
