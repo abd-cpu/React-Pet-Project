@@ -23,14 +23,18 @@ function App(props) {
           <Route 
             path='/dialogs' 
             render={() => <DialogsContainer 
-                            dispatch={props.dispatch}
-                            companionData={props.state.messagesPage} />} />
+                            // dispatch={props.dispatch}
+                            // companionData={props.state.messagesPage} 
+
+                            />} />
           <Route path='/groups' component={Groups} />
           <Route 
             path='/profile' 
             render={() => <ProfileContainer
-                            dispatch={props.dispatch}
-                            postsData={props.state.profilePage} />} />
+                            // dispatch={props.dispatch}
+                            // postsData={props.state.profilePage} 
+
+                            />} />
           <Route path='/photoGallery' component={PhotoGallery} />
           <Route path='/videoGallery' component={VideoGallery} />
           <Route path='/documents' component={Documents} />

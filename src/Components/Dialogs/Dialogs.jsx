@@ -23,7 +23,6 @@ const Dialogs = (props) => {
                     status={user.status} 
                     userName={user.userName} 
                     avatar={user.avatar} />)
-
   return (
     <div className={s.dialogs}>
       <div className={s.dialogList}>

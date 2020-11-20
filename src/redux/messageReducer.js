@@ -19,7 +19,7 @@ let initialState = {
 
 let messageReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_MESSAGE:
+        case ADD_MESSAGE:{
             let message = {
                 id: "7",
                 author: true,
@@ -27,12 +27,17 @@ let messageReducer = (state = initialState, action) => {
                 date: "18:40",
                 avatar: "https://iqonic.design/themes/socialv/vue/dist/img/09.b245ce8d.jpg"
             };
-            state.messages.push(message);
-            state.newMessage = "";
-            return state;
-        case TYPE_MESSAGE:
-            state.newMessage = action.newText;
-            return state;
+            let copyState = {...state};
+            copyState.messages = [...state.messages];
+            copyState.messages.push(message);
+            copyState.newMessage = "";
+            return copyState;
+        }
+        case TYPE_MESSAGE:{
+            let copyState = {...state};
+            copyState.newMessage = action.newText;
+            return copyState;
+        }
         default:
             return state;
     }    

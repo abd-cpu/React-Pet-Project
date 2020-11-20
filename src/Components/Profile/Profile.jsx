@@ -8,7 +8,9 @@ const Profile = (props) => {
   let ref = React.createRef();
 
   let addPost = () => {
-    props.addPost()
+   // debugger
+    props.addPost();
+    //debugger
   }
 
   let typeText = () => {
@@ -23,7 +25,7 @@ const Profile = (props) => {
         <div className={s.createPost}>
           <h2>Create Post</h2>
 
-          <img src="https://iqonic.design/themes/socialv/html/images/user/1.jpg" />
+          <img alt="" src="https://iqonic.design/themes/socialv/html/images/user/1.jpg" />
           <textarea onChange={ typeText } ref={ref} placeholder="Write something here..." value={props.postsData.newPost} ></textarea>
 
           <button onClick={ addPost }>Post</button>

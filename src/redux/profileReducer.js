@@ -47,7 +47,7 @@ let initialState = {
 
 let profileReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_POST:
+        case ADD_POST:{
             let post = {  
                 userName: "Andr Koldar", 
                 text: state.newPost,
@@ -56,12 +56,16 @@ let profileReducer = (state = initialState, action) => {
                 shareCount: "0", 
                 avatar: "https://iqonic.design/themes/socialv/vue/dist/img/g2.32d0f5a2.jpg"
             };
-            state.posts.unshift(post);
-            state.newPost = "";
-            return state;
+            let copyState = {...state};
+            copyState.posts = [...state.posts];
+            copyState.posts.unshift(post);
+            copyState.newPost = "";
+            return copyState;
+        }
         case TYPE_POST:
-            state.newPost = action.newPost;
-            return state;
+            let copyState = {...state};
+            copyState.newPost = action.newPost;
+            return copyState;
         default:
             return state;
     }    
