@@ -10,10 +10,7 @@ let rerenderDom = (state) => {
         <React.StrictMode>
             <App 
                 state={state}
-                addMessage={store.dispatch.bind(store)}
-                typeNewMessage={store.dispatch.bind(store)}
-                addPost={store.dispatch.bind(store)}
-                typePost={store.dispatch.bind(store)}
+                dispatch={store.dispatch.bind(store)}
                 />
         </React.StrictMode>,
         document.getElementById('root')

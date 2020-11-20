@@ -2,19 +2,18 @@ import React from 'react';
 import s from './Profile.module.css';
 import Posts from "./Posts/Posts";
 import Friends from './Friends/Friends';
-import { addPostActionCreator, typePostActionCreator } from '../../redux/profileReducer';
 
 const Profile = (props) => {
 
   let ref = React.createRef();
 
-  let sendPost = () => {
-    props.addPost(addPostActionCreator())
+  let addPost = () => {
+    props.addPost()
   }
 
   let typeText = () => {
     let text = ref.current.value;
-    props.typePost(typePostActionCreator(text))
+    props.typeText(text)
   }
 
   return (
@@ -27,7 +26,7 @@ const Profile = (props) => {
           <img src="https://iqonic.design/themes/socialv/html/images/user/1.jpg" />
           <textarea onChange={ typeText } ref={ref} placeholder="Write something here..." value={props.postsData.newPost} ></textarea>
 
-          <button onClick={ sendPost }>Post</button>
+          <button onClick={ addPost }>Post</button>
         </div>
         <Posts postsData={props.postsData.posts} />
       </div>

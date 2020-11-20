@@ -2,8 +2,6 @@ import React from "react";
 import './App.css';
 import Header from "./Components/Header/Header";
 import Navbar from "./Components/Navbar/Navbar";
-import Profile from "./Components/Profile/Profile";
-import Dialogs from "./Components/Dialogs/Dialogs";
 import { BrowserRouter, Route } from "react-router-dom";
 import PhotoGallery from "./Components/PhotoGallery/PhotoGallery";
 import Music from "./Components/Music/Music";
@@ -11,6 +9,8 @@ import Groups from "./Components/Groups/Groups";
 import VideoGallery from "./Components/VideoGallery/VideoGallery";
 import News from "./Components/News/News";
 import Documents from "./Components/Documents/Documents";
+import DialogsContainer from "./Components/Dialogs/DialogsContainer";
+import ProfileContainer from "./Components/Profile/ProfileContainer";
 
 function App(props) {
   return (
@@ -22,16 +22,14 @@ function App(props) {
           <Route path='/news' component={News} />
           <Route 
             path='/dialogs' 
-            render={() => <Dialogs 
-                            typeMessage={props.typeNewMessage}
-                            addMessage={props.addMessage} 
+            render={() => <DialogsContainer 
+                            dispatch={props.dispatch}
                             companionData={props.state.messagesPage} />} />
           <Route path='/groups' component={Groups} />
           <Route 
             path='/profile' 
-            render={() => <Profile
-                            addPost={props.addPost}
-                            typePost={props.typePost}
+            render={() => <ProfileContainer
+                            dispatch={props.dispatch}
                             postsData={props.state.profilePage} />} />
           <Route path='/photoGallery' component={PhotoGallery} />
           <Route path='/videoGallery' component={VideoGallery} />
