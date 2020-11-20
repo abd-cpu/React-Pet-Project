@@ -8,9 +8,7 @@ const Profile = (props) => {
   let ref = React.createRef();
 
   let addPost = () => {
-   // debugger
     props.addPost();
-    //debugger
   }
 
   let typeText = () => {

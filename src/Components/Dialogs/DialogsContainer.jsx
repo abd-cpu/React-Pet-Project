@@ -1,20 +1,6 @@
-import React from 'react';
 import { connect } from 'react-redux';
-import { addMessageActionCreator, typeInputActionCreator } from '../../redux/messageReducer';
+import { addMessageActionCreator, chooseDialogActionCreator, typeInputActionCreator } from '../../redux/messageReducer';
 import Dialogs from './Dialogs';
-
-// const DialogsContainer = (props) => {
-
-//   let sendMessage = () => {
-//     props.dispatch(addMessageActionCreator());
-//   }
-
-//   let typeInput = (text) => {
-//     props.dispatch(typeInputActionCreator(text));
-//   }
-
-//   return <Dialogs sendMessage={sendMessage} typeInput={typeInput} companionData={props.companionData} />
-// }
 
 const mapStateToProps = (state) => {
   return {
@@ -29,6 +15,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     typeInput: (text) => {
       dispatch(typeInputActionCreator(text))
+    },
+    chooseDialog: (id) => {
+      dispatch(chooseDialogActionCreator(id))
     }
   }
 }

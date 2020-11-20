@@ -1,5 +1,6 @@
 const ADD_MESSAGE = "ADD-MESSAGE";
 const TYPE_MESSAGE = "TYPE-MESSAGE";
+const CHOOSE_DIALOG = "CHOOSE-DIALOG";
 
 let initialState = {
     dialogs: [{ id: "1", status: "online", userName: "Bob Marlie", avatar: "https://iqonic.design/themes/socialv/vue/dist/img/user-01.22e5a823.jpg" },
@@ -15,11 +16,12 @@ let initialState = {
     { id: "6", author: true, message: "thank u", date: "18:40", avatar: "https://iqonic.design/themes/socialv/vue/dist/img/09.b245ce8d.jpg" },
     ],
     newMessage: "asd",
+    activeDialog: {}
 }
 
 let messageReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_MESSAGE:{
+        case ADD_MESSAGE: {
             let message = {
                 id: "7",
                 author: true,
@@ -27,24 +29,34 @@ let messageReducer = (state = initialState, action) => {
                 date: "18:40",
                 avatar: "https://iqonic.design/themes/socialv/vue/dist/img/09.b245ce8d.jpg"
             };
-            let copyState = {...state};
-            copyState.messages = [...state.messages];
-            copyState.messages.push(message);
-            copyState.newMessage = "";
-            return copyState;
+            return {
+                ...state,
+                messages: [...state.messages, message],
+                newMessage: ""
+            }
         }
-        case TYPE_MESSAGE:{
-            let copyState = {...state};
-            copyState.newMessage = action.newText;
-            return copyState;
-        }
+        case TYPE_MESSAGE:
+            return {
+                ...state,
+                newMessage: action.newText
+            }
+        case CHOOSE_DIALOG:
+            let newDialog = state.dialogs.filter((dialog) => dialog.id === action.id)[0]
+            return {
+                ...state,
+                activeDialog: newDialog
+            }
         default:
             return state;
-    }    
+    }
 }
 
-export let addMessageActionCreator = () => ({ type: ADD_MESSAGE });
-export let typeInputActionCreator = (text) => ({
+export const addMessageActionCreator = () => ({ type: ADD_MESSAGE });
+export const chooseDialogActionCreator = (id) => ({
+    type: CHOOSE_DIALOG,
+    id: id
+})
+export const typeInputActionCreator = (text) => ({
     type: TYPE_MESSAGE,
     newText: text
 });

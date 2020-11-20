@@ -22,19 +22,11 @@ function App(props) {
           <Route path='/news' component={News} />
           <Route 
             path='/dialogs' 
-            render={() => <DialogsContainer 
-                            // dispatch={props.dispatch}
-                            // companionData={props.state.messagesPage} 
-
-                            />} />
+            render={() => <DialogsContainer />} />
           <Route path='/groups' component={Groups} />
           <Route 
             path='/profile' 
-            render={() => <ProfileContainer
-                            // dispatch={props.dispatch}
-                            // postsData={props.state.profilePage} 
-
-                            />} />
+            render={() => <ProfileContainer />} />
           <Route path='/photoGallery' component={PhotoGallery} />
           <Route path='/videoGallery' component={VideoGallery} />
           <Route path='/documents' component={Documents} />

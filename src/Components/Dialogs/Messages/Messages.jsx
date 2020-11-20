@@ -10,7 +10,7 @@ const Messages = (props) => {
                         {message.message}
                     </div>
                     <div className={ s.messageInfo }>
-                        <img className={s.avatar} src={message.avatar} />
+                        <img alt="" className={s.avatar} src={message.avatar} />
                         <span>{message.date}</span>
                     </div>
                 </div>
@@ -19,7 +19,7 @@ const Messages = (props) => {
             return (
                 <div className={s.messageBlock}>
                     <div className={ s.messageInfo }>
-                        <img className={s.avatar} src={message.avatar} />
+                        <img alt="" className={s.avatar} src={message.avatar} />
                         <span>{message.date}</span>
                     </div>
                     <div className={ s.text }>
